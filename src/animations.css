@@ -1,0 +1,103 @@
+
+.app-shell {
+  animation: appFadeIn 0.5s ease both;
+}
+
+.panel,
+.export-section,
+.publish-panel {
+  animation: panelRise 0.55s ease both;
+}
+
+.preview-panel {
+  animation-delay: 0.08s;
+}
+
+.export-section {
+  animation-delay: 0.12s;
+}
+
+.publish-panel {
+  animation-delay: 0.16s;
+}
+
+.btn,
+.theme-button,
+.panel-icon,
+.brand-mark {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.25s ease,
+    border-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 28px #b5a4ff30;
+}
+
+.theme-aurora .btn-primary:hover {
+  box-shadow: 0 8px 28px #7cf0d030;
+}
+
+.theme-light .btn-primary:hover {
+  box-shadow: 0 8px 28px #7458ce30;
+}
+
+.panel:hover .panel-icon {
+  transform: translateY(-2px);
+}
+
+.markdown-editor {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.markdown-editor:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.toast-message {
+  animation: toastAppear 0.25s ease both;
+}
+
+@keyframes appFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes panelRise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toastAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
